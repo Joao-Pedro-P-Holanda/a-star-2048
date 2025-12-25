@@ -10,22 +10,24 @@ SQUARE_SIZE = 4
 empty_positions: list[tuple[int, int]] = []
 
 
+def init_board():
+    board = [[0] * SQUARE_SIZE for _ in range(SQUARE_SIZE)]
+    spawn_value(board)
+    return board
+
+
 def spawn_value(board: list[list[int]]):
-    empty_tile = choice(empty_positions)
-
-    value = choices([2, 4], weights=[0.7, 0.3], k=1)
-
-    board[empty_tile[0]][empty_tile[1]] = value[0]
-
-
-def set_empty_positions(board: list[list[int]]):
-    global empty_positions
     empty_positions = [
         (i, j)
         for i in range(SQUARE_SIZE)
         for j in range(SQUARE_SIZE)
         if board[i][j] == 0
     ]
+    empty_tile = choice(empty_positions)
+
+    value = choices([2, 4], weights=[0.7, 0.3], k=1)
+
+    board[empty_tile[0]][empty_tile[1]] = value[0]
 
 
 def move_board(

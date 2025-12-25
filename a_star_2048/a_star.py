@@ -2,7 +2,7 @@ from collections.abc import Generator
 from dataclasses import dataclass
 from heapq import heappush, heappop
 
-from board import move_board
+from .board import move_board
 
 
 possible_states = []

@@ -9,22 +9,20 @@ Possible heuristics:
 
 """
 
-from board import (
-    set_empty_positions,
+from .board import (
+    init_board,
     move_board,
     print_board,
     spawn_value,
-    SQUARE_SIZE,
 )
 
 if __name__ == "__main__":
-    current_play: list[list[int]] = [[0] * SQUARE_SIZE for _ in range(SQUARE_SIZE)]
+    current_play: list[list[int]] = init_board()
 
     last_play: list[list[int]] = []
     while True:
         if current_play != last_play:
             last_play = current_play
-            set_empty_positions(current_play)
             spawn_value(current_play)
 
         print_board(current_play)
