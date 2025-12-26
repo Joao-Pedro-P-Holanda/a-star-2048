@@ -1,0 +1,26 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  display: grid;
+  max-width: 60%;
+  max-height: 60%;
+  width: 600px;
+  height: 600px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: outset #E1E5F2;
+  background-color: #BFDBF7;
+  color: #022B3A;
+  font-size: 32px;
+}
