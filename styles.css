@@ -24,6 +24,7 @@ main {
   justify-content: center;
   align-items: center;
   border: outset #E1E5F2;
+  border-radius: 16px;
   background-color: #BFDBF7;
   color: #022B3A;
   font-size: 32px;
