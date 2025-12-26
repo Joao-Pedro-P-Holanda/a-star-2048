@@ -1,5 +1,6 @@
 from collections import deque
 
+from copy import deepcopy
 from random import choice, choices
 from typing import Literal
 
@@ -33,7 +34,7 @@ def spawn_value(board: list[list[int]]):
 def move_board(
     board: list[list[int]], direction: Literal["left", "right", "up", "down"]
 ) -> list[list[int]]:
-    new_board = board.copy()
+    new_board = deepcopy(board)
 
     new_line: deque[int]
     new_col: deque[int]
