@@ -4,6 +4,9 @@
 		<title>2048 solver</title>
 		<script src="https://cdn.jsdelivr.net/pyodide/v0.29.0/full/pyodide.js"></script>
 		<link rel='stylesheet' href="./styles.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<script type="text/javascript">
@@ -27,6 +30,7 @@
 				for (let i = 0; i < cells.length; i++) {
 					if (initial_board[i] != 0) {
 						cells[i].innerHTML = initial_board[i]
+						cells[i].classList.add(`cell-${initial_board[i]}`)
 					} else {
 						cells[i].innerHTML = ""
 					}
@@ -58,6 +62,23 @@
 						
 						
 						for (let i = 0; i < cells.length; i++) {
+							const clearClasses = [
+									'cell-2',
+									'cell-4',
+									'cell-8',
+									'cell-16',
+									'cell-32',
+									'cell-64',
+									'cell-128',
+									'cell-256',
+									'cell-512',
+									'cell-1024',
+									'cell-2048'
+								]
+
+							cells[i].classList.remove(...clearClasses)
+							cells[i].classList.add(`cell-${new_board[i]}`)
+
 							if (new_board[i] != 0) {
 								cells[i].innerHTML = new_board[i]
 							} else {

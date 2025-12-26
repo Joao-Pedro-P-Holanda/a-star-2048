@@ -1,3 +1,7 @@
+body {
+  font-family: 'Noto', sans-serif;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -23,4 +27,59 @@ main {
   background-color: #BFDBF7;
   color: #022B3A;
   font-size: 32px;
+}
+
+.cell-2 {
+  color: #FFF;
+  background-color: #F7A2A1
+}
+
+.cell-4 {
+  color: #FFF;
+  background-color: #F8AA8F;
+}
+
+.cell-8 {
+  color: #FFF;
+  background-color: #F9B37D;
+}
+
+.cell-16 {
+  color: #FFF;
+  background-color: #FABB6B;
+}
+
+.cell-32 {
+  color: #FFF;
+  background-color: #FBC359;
+}
+
+.cell-64 {
+  color: #FFF;
+  background-color: #FBCC48;
+}
+
+.cell-128 {
+  color: #FFF;
+  background-color: #FFCC04;
+}
+
+.cell-256 {
+  color: #FFF;
+  background-color: #FCD436;
+}
+
+.cell-512 {
+  color: #FFF;
+  background-color: #FDDC24;
+}
+
+.cell-1024 {
+  color: #FFF;
+  background-color: #FEE512;
+}
+
+.cell-2048 {
+  color: #FFF;
+  background-color: #FFED00;
 }
