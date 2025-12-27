@@ -1,5 +1,6 @@
-from collections import deque
+from collections import defaultdict, deque
 
+from collections.abc import Mapping
 from copy import deepcopy
 from random import choice, choices
 from typing import Literal
@@ -132,3 +133,30 @@ def print_board(board: list[list[int]]):
     for row in board:
         print(f"# {' '.join([str(num) for num in row])} #")
     print(" ".join("#" * (len(board) + 2)))
+
+
+def is_finished(board: list[list[int]]):
+    """
+    Check if there are no more movements possible in the board
+    """
+    no_empty_tiles = sum([row.count(0) for row in board]) == 0
+
+    # checking horizontally
+    for row in board:
+        current_element = row[0]
+        for el in row[1:]:
+            if el == current_element:
+                return False
+            else:
+                current_element = el
+
+    # checking vertically
+    for col_idx in range(len(board)):
+        current_element = board[0][col_idx]
+        for row_idx in range(1, len(board)):
+            if current_element == board[row_idx][col_idx]:
+                return False
+            else:
+                current_element = board[row_idx][col_idx]
+
+    return no_empty_tiles
