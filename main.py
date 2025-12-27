@@ -4,13 +4,13 @@ Solving 2048 using A*
 Possible heuristics:
 - Points
 - Tiles removed
-- Possible removals
 - New biggest tile
 
 """
 
-from .board import (
+from a_star_2048.board import (
     init_board,
+    is_finished,
     move_board,
     print_board,
     spawn_value,
@@ -21,6 +21,9 @@ if __name__ == "__main__":
 
     last_play: list[list[int]] = []
     while True:
+        if is_finished(current_play):
+            print("You lost the game")
+            break
         if current_play != last_play:
             last_play = current_play
             spawn_value(current_play)
